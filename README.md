@@ -30,6 +30,14 @@ atlas-data.js
 
 Because the data is bundled locally, the app can be archived, cited, and reopened as a self-contained static artifact.
 
+If you want to upload or share a single file only, use:
+
+```text
+index.standalone.html
+```
+
+This standalone file embeds `styles.css`, `atlas-data.js`, and `app.js` directly inside the HTML document.
+
 ## Features
 
 - Full interactive canvas atlas for all 51,772 configurations.
@@ -55,6 +63,8 @@ Because the data is bundled locally, the app can be archived, cited, and reopene
 
 ```text
 index.html       Main static web application
+index.standalone.html
+                 Single-file build with CSS, data, and app logic embedded
 styles.css       Futuristic/tarot-inspired visual styling
 app.js           Interactive atlas logic
 atlas-data.js    Bundled Prime-Ulam data payload
