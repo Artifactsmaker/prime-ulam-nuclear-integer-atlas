@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prime-Ulam Nuclear Integer Atlas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow" data-i18n="eyebrow">Arithmetic Descriptor Atlas</p>
+        <h1>Prime-Ulam Nuclear Integer Atlas</h1>
+        <p class="subtitle" data-i18n="subtitle">PRIME-ULAM ARITHMETIC MAP OF NUCLEAR CONFIGURATION SPACE</p>
+      </div>
+      <div class="top-actions">
+        <div class="language-toggle" aria-label="Language">
+          <button id="langEn" class="active" type="button">EN</button>
+          <button id="langVn" type="button">VN</button>
+        </div>
+        <div class="status-pill">
+          <span id="visibleCount">0</span>
+          <small data-i18n="configCount">/ 51,772 configs</small>
+        </div>
+      </div>
+    </header>
+
+    <section class="stats-grid" id="statsGrid"></section>
+
+    <main class="workspace">
+      <aside class="control-panel">
+        <div class="panel-block">
+          <label for="searchBox" data-i18n="searchLabel">Search</label>
+          <input id="searchBox" type="search" placeholder="U-238, Z=92, N=146, PiSig..." autocomplete="off">
+        </div>
+        <div class="panel-row">
+          <div class="panel-block">
+            <label for="metricSelect" data-i18n="metricLabel">Metric</label>
+            <select id="metricSelect">
+              <option value="Hpf_total">Hpf_total</option>
+              <option value="Omega_total">Omega_total</option>
+              <option value="omega_total">omega_total</option>
+              <option value="rad_total">rad_total</option>
+              <option value="v2_total">v2_total</option>
+              <option value="factor_overlap">factor_overlap</option>
+            </select>
+          </div>
+          <div class="panel-block">
+            <label for="regionSelect" data-i18n="regionLabel">Region</label>
+            <select id="regionSelect">
+              <option value="all" data-i18n="regionAll">All Z</option>
+              <option value="official">Z <= 118</option>
+              <option value="beyond">Z = 119-172</option>
+            </select>
+          </div>
+        </div>
+        <div class="range-grid">
+          <label><span data-i18n="zMin">Z min</span> <input id="zMin" type="number" min="1" max="172" value="1"></label>
+          <label><span data-i18n="zMax">Z max</span> <input id="zMax" type="number" min="1" max="172" value="172"></label>
+          <label><span data-i18n="nMin">N min</span> <input id="nMin" type="number" min="0" max="300" value="0"></label>
+          <label><span data-i18n="nMax">N max</span> <input id="nMax" type="number" min="0" max="300" value="300"></label>
+        </div>
+        <div class="button-row">
+          <button id="resetBtn" type="button" data-i18n="reset">Reset</button>
+          <button id="topBtn" type="button" data-i18n="topMetric">Top metric</button>
+        </div>
+        <div class="legend">
+          <div class="legend-bar"></div>
+          <div><span data-i18n="low">low</span><span id="legendMetric">Hpf_total</span><span data-i18n="high">high</span></div>
+        </div>
+        <p class="boundary-note" data-i18n="boundaryNote">Descriptors are arithmetic transformations of Z, N, and A. This is not an observed-nuclide database.</p>
+      </aside>
+
+      <section class="atlas-stage">
+        <div class="canvas-wrap">
+          <canvas id="atlasCanvas" width="1204" height="688"></canvas>
+          <div class="axis-label x" data-i18n="axisN">N axis: neutron number 0-300</div>
+          <div class="axis-label y" data-i18n="axisZ">Z axis: proton number 1-172</div>
+        </div>
+      </section>
+
+      <aside class="detail-panel">
+        <p class="eyebrow small" data-i18n="selectedConfig">Selected Configuration</p>
+        <h2 id="detailTitle" data-empty-key="detailEmpty">Hover or click a point</h2>
+        <div class="detail-grid" id="detailGrid"></div>
+        <div class="sig-box">
+          <span>PiSig Z</span><strong id="sigZ">-</strong>
+          <span>PiSig N</span><strong id="sigN">-</strong>
+          <span>PiSig A</span><strong id="sigA">-</strong>
+        </div>
+      </aside>
+    </main>
+
+    <section class="table-section">
+      <div class="table-head">
+        <div>
+          <p class="eyebrow small" data-i18n="ledger">Configuration Ledger</p>
+          <h2 data-i18n="ledgerTitle">51,772 integer configurations</h2>
+        </div>
+        <div class="pager">
+          <button id="prevPage" type="button" data-i18n="prev">Prev</button>
+          <span id="pageInfo">Page 1</span>
+          <button id="nextPage" type="button" data-i18n="next">Next</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nuclide</th><th>Z</th><th>N</th><th>A</th><th>Omega</th><th>omega</th><th>rad</th><th>v2</th><th>overlap</th><th>Hpf</th>
+            </tr>
+          </thead>
+          <tbody id="rowsBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+  <script src="atlas-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
