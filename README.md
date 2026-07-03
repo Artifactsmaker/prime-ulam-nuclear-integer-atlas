@@ -1,4 +1,4 @@
-# Prime-Ulam Nuclear Integer Atlas
+# Prime-Ulam Nuclear Integer Atlas [![DOI](https://zenodo.org/badge/1288441706.svg)](https://doi.org/10.5281/zenodo.21173320)
 
 **Prime-Ulam Nuclear Integer Atlas** is an interactive web atlas for exploring the full Prime-Ulam arithmetic descriptor grid over nuclear configuration space.
 
