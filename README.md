@@ -2,7 +2,9 @@
 
 **Prime-Ulam Nuclear Integer Atlas** is an interactive web atlas for exploring the full Prime-Ulam arithmetic descriptor grid over nuclear configuration space.
 
-Subtitle: **bản đồ mô tả số học Prime-Ulam trên không gian cấu hình hạt nhân**
+Default subtitle: **PRIME-ULAM ARITHMETIC MAP OF NUCLEAR CONFIGURATION SPACE**
+
+Vietnamese subtitle: **BẢN ĐỒ MÔ TẢ SỐ HỌC PRIME-ULAM TRÊN KHÔNG GIAN CẤU HÌNH HẠT NHÂN**
 
 The app visualizes and queries **51,772 integer configurations** over:
 
@@ -31,6 +33,7 @@ Because the data is bundled locally, the app can be archived, cited, and reopene
 ## Features
 
 - Full interactive canvas atlas for all 51,772 configurations.
+- EN/VN language toggle for the subtitle and main interface labels.
 - Search by nuclide label, coordinate, or prime-signature content.
 - Exact label search, e.g. `U-238`.
 - Coordinate search, e.g. `Z=92 N=146`.
